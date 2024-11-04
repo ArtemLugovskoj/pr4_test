@@ -32,19 +32,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const playTest = () => {
         const renderQuestion = () => {
-            // Handle the visibility of prevBtn and nextBtn using switch case
             switch (numberQuestion) {
                 case 0:
-                    prevBtn.style.display = 'none'; // Hide prevBtn on the first question
-                    nextBtn.style.display = 'inline-block'; // Show nextBtn
+                    prevBtn.style.display = 'none'; 
+                    nextBtn.style.display = 'inline-block'; 
                     break;
                 case questions.length - 1:
-                    prevBtn.style.display = 'inline-block'; // Show prevBtn on the last question
-                    nextBtn.style.display = 'none'; // Hide nextBtn
+                    prevBtn.style.display = 'inline-block'; 
+                    nextBtn.style.display = 'none'; 
                     break;
                 default:
-                    prevBtn.style.display = 'inline-block'; // Show prevBtn for intermediate questions
-                    nextBtn.style.display = 'inline-block'; // Show nextBtn
+                    prevBtn.style.display = 'inline-block'; 
+                    nextBtn.style.display = 'inline-block'; 
                     break;
             }
 
