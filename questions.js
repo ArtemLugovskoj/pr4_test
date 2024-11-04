@@ -73,7 +73,7 @@ const questions = [
     }
 ];
 
-const obj = {}
+// const obj = {}
 
 const getData = () => {
     formAnswers.textContent = 'LOAD';
