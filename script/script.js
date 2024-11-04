@@ -32,9 +32,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const playTest = () => {
         const renderQuestion = () => {
-            prevBtn.style.display = numberQuestion > 0 ? 'inline-block' : 'none';
-
-            nextBtn.style.display = (numberQuestion === questions.length - 1) ? 'none' : 'inline-block';
+            // Handle the visibility of prevBtn and nextBtn using switch case
+            switch (numberQuestion) {
+                case 0:
+                    prevBtn.style.display = 'none'; // Hide prevBtn on the first question
+                    nextBtn.style.display = 'inline-block'; // Show nextBtn
+                    break;
+                case questions.length - 1:
+                    prevBtn.style.display = 'inline-block'; // Show prevBtn on the last question
+                    nextBtn.style.display = 'none'; // Hide nextBtn
+                    break;
+                default:
+                    prevBtn.style.display = 'inline-block'; // Show prevBtn for intermediate questions
+                    nextBtn.style.display = 'inline-block'; // Show nextBtn
+                    break;
+            }
 
             const currentQuestion = questions[numberQuestion];
             questionTitle.textContent = currentQuestion.question;
